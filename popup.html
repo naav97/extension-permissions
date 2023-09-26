@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Installed Extensions</title>
-</head>
-<body>
-  <h1>Installed Extensions</h1>
-  <ul id="extension-list"></ul>
-  <script src="popup.js"></script>
-</body>
+    <head>
+        <title>Extenciones Instaladas</title>
+        <style>
+            .tab {
+                display: none;
+            }
+            .active {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="#" id="inst-btn">Instaladas</a>
+            <a href="#" id="peli-btn">Peligrosas</a>
+        </nav>
+        <div id="inst-tab" class="tab active">
+            <h1>Extenciones Instaladas</h1>
+            <ul id="extension-list"></ul>
+            <script src="popup.js"></script>
+        </div>
+        <div id="peli-tab" class="tab">
+            <h1>Extenciones Peligrosas</h1>
+        </div>
+    </body>
 </html>

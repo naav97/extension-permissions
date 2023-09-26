@@ -7,3 +7,12 @@ chrome.management.getAll((extensions) => {
     extensionList.appendChild(li);
   });
 });
+
+document.getElementById('inst-btn').addEventListener('click', () => {
+    document.getElementById('inst-tab').classList.add('active');
+    document.getElementById('peli-tab').classList.remove('active');
+});
+document.getElementById('peli-btn').addEventListener('click', () => {
+    document.getElementById('peli-tab').classList.add('active');
+    document.getElementById('inst-tab').classList.remove('active');
+});
