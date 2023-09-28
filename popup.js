@@ -1,11 +1,20 @@
+let permDic = {
+    "peligro":['identity', 'nativeMessaging', 'storage']
+}
+
 chrome.management.getAll((extensions) => {
-  const extensionList = document.getElementById('extension-list');
-  
-  extensions.forEach((extension) => {
-    const li = document.createElement('li');
-    li.textContent = `Name: ${extension.name}, Permissions: ${extension.permissions.join(', ')}`;
-    extensionList.appendChild(li);
-  });
+    const extensionList = document.getElementById('extension-list');
+    const peligroList = document.getElementById('ext-peli');
+    extensions.forEach((extension) => {
+        const li = document.createElement('li');
+        li.textContent = `Name: ${extension.name}, Permissions: ${extension.permissions.join(', ')}`;
+        extensionList.appendChild(li);
+        if(extension.permissions.some(per => { return permDic.peligro.includes(per); })) {
+            const lip = document.createElement('li');
+            lip.textContent = `Name: ${extension.name}, Permissions: ${extension.permissions.join(', ')}`;
+            peligroList.appendChild(lip);
+        }
+    });
 });
 
 document.getElementById('inst-btn').addEventListener('click', () => {
