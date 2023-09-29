@@ -1,0 +1,11 @@
+.tab {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+body {
+    width: 500px;
+}

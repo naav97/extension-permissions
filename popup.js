@@ -1,5 +1,6 @@
 let permDic = {
-    "peligro":['identity', 'nativeMessaging', 'storage']
+    "peligro":['identity', 'nativeMessaging', 'storage', 'cookies'],
+    "accex":['activeTab', 'browserSettings', 'clipboardRead', 'debugger', 'declarativeNetRequest', 'declarativeNetRequestFeedback', 'declarativeNetRequestWithHostAccess', 'desktopCapture', 'downloads', 'downloads.open', 'downloads.ui', 'geolocation', 'management', 'pageCapture', 'privacy', 'proxy', 'scripting', 'system.display', 'tabCapture', 'tabHide', 'tabs', 'webAuthenticationProxy', 'webRequest', 'webRequestBlocking']
 }
 
 chrome.management.getAll((extensions) => {
@@ -10,6 +11,7 @@ chrome.management.getAll((extensions) => {
         li.textContent = `Name: ${extension.name}, Permissions: ${extension.permissions.join(', ')}`;
         extensionList.appendChild(li);
         if(extension.permissions.some(per => { return permDic.peligro.includes(per); })) {
+            li.style.backgroundColor = "#ff5e5e";
             const lip = document.createElement('li');
             lip.textContent = `Name: ${extension.name}, Permissions: ${extension.permissions.join(', ')}`;
             peligroList.appendChild(lip);
