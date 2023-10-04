@@ -1,6 +1,8 @@
 let permDic = {
     "peligro":['identity', 'nativeMessaging', 'storage', 'cookies'],
-    "accex":['activeTab', 'browserSettings', 'clipboardRead', 'debugger', 'declarativeNetRequest', 'declarativeNetRequestFeedback', 'declarativeNetRequestWithHostAccess', 'desktopCapture', 'downloads', 'downloads.open', 'downloads.ui', 'geolocation', 'management', 'pageCapture', 'privacy', 'proxy', 'scripting', 'system.display', 'tabCapture', 'tabHide', 'tabs', 'webAuthenticationProxy', 'webRequest', 'webRequestBlocking']
+    "accex":['activeTab', 'browserSettings', 'clipboardRead', 'debugger', 'declarativeNetRequest', 'declarativeNetRequestFeedback', 'declarativeNetRequestWithHostAccess', 'desktopCapture', 'downloads', 'downloads.open', 'downloads.ui', 'geolocation', 'management', 'pageCapture', 'privacy', 'proxy', 'scripting', 'system.display', 'tabCapture', 'tabHide', 'tabs', 'webAuthenticationProxy', 'webRequest', 'webRequestBlocking'],
+    "accmod":['bookmarks', 'contextualIdentities', 'devtools', 'enterprise.hardwarePlatform', 'fontSettings', 'history', 'power', 'printerProvider', 'sessions', 'system.cpu', 'topSites', 'tts', 'ttsEngine'],
+    "sinpel":['alarms', 'browsingData', 'captivePortal', 'clipboardWrite', 'contentSettings', 'contextMenus', 'declarativeContent', 'dns', 'find', 'gcm', 'idle', 'menus', 'notifications', 'offscreen', 'pkcs11', 'search', 'sidePanel', 'system.memory', 'system.storage', 'tabGroups', 'theme', 'unlimitedStorage', 'webNavigation']
 }
 
 chrome.management.getAll((extensions) => {
@@ -8,13 +10,22 @@ chrome.management.getAll((extensions) => {
     const peligroList = document.getElementById('ext-peli');
     extensions.forEach((extension) => {
         const li = document.createElement('li');
-        li.textContent = `Name: ${extension.name}, Permissions: ${extension.permissions.join(', ')}`;
+        li.textContent = `${extension.name}, Permissions: ${extension.permissions.join(', ')}`;
         extensionList.appendChild(li);
         if(extension.permissions.some(per => { return permDic.peligro.includes(per); })) {
             li.style.backgroundColor = "#ff5e5e";
             const lip = document.createElement('li');
             lip.textContent = `Name: ${extension.name}, Permissions: ${extension.permissions.join(', ')}`;
             peligroList.appendChild(lip);
+        }
+        else if(extension.permissions.some(per => { return permDic.accex.includes(per); })) {
+            li.style.backgroundColor = "#f9cb8b";
+        }
+        else if(extension.permissions.some(per => { return permDic.accmod.includes(per); })) {
+            li.style.backgroundColor = "#d9ff7d";
+        }
+        else if(extension.permissions.some(per => { return permDic.sinpel.includes(per); })) {
+            li.style.backgroundColor = "#aac7ed";
         }
     });
 });
