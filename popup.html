@@ -3,11 +3,13 @@
     <head>
         <title>Extensiones Instaladas</title>
         <link rel="stylesheet" type="text/css" href="popup.css">
+        <meta charset="UTF-8">
     </head>
     <body>
         <nav>
             <a href="#" id="inst-btn">Instaladas</a>
             <a href="#" id="peli-btn">Peligrosas</a>
+            <a href="#" id="expl-btn">Explicación</a>
         </nav>
         <div id="inst-tab" class="tab active">
             <h1>Extensiones Instaladas</h1>
@@ -16,6 +18,17 @@
         <div id="peli-tab" class="tab">
             <h1>Extensiones Peligrosas</h1>
             <ul id="ext-peli"></ul>
+        </div>
+        <div id="expl-tab" class="tab">
+            <h1>Explicación de los colores</h1>
+            <h2 class="peli-tit">Peligroso</h2>
+            <p>Este se refiere a permisos con los cuales la extensión puede ser vulnerable a un ataque si no se tiene precaución por parte del programador.</p>
+            <h2 class="accex-tit">Acceso exesivo</h2>
+            <p>Esta categoria se refiere a permisos con los cuales la extensión tiene permiso de manipular el navegador, la pagina web actual o las peticiones web en curso sin tener que pedirle permiso o informar al usuario en el momento. Tambien se refiere a permisos que conceden acceso a datos muy sensibles</p>
+            <h2 class="accmod-tit">Acceso moderado</h2>
+            <p>Esta categoria se refiere a permisos con los cuales la extensión tiene acceso a datos que se podrian considerar sensibles o privados.</p>
+            <h2 class="sin-pel">Sin peligro</h2>
+            <p>Esta categoria se refiere a permisos que dentro de mi analisis e investigacion, no encontre algun peligro inminente, esto no significa que no pueda haber, solo que no encontre.</p>
         </div>
         <script src="popup.js"></script>
     </body>
