@@ -1,8 +1,8 @@
 let permDic = {
-    "peligro":['identity', 'nativeMessaging', 'storage', 'cookies'],
-    "accex":['activeTab', 'browserSettings', 'clipboardRead', 'debugger', 'declarativeNetRequest', 'declarativeNetRequestFeedback', 'declarativeNetRequestWithHostAccess', 'desktopCapture', 'downloads', 'downloads.open', 'downloads.ui', 'geolocation', 'management', 'pageCapture', 'privacy', 'proxy', 'scripting', 'system.display', 'tabCapture', 'tabHide', 'tabs', 'webAuthenticationProxy', 'webRequest', 'webRequestBlocking'],
-    "accmod":['bookmarks', 'contextualIdentities', 'devtools', 'enterprise.hardwarePlatform', 'fontSettings', 'history', 'power', 'printerProvider', 'sessions', 'system.cpu', 'topSites', 'tts', 'ttsEngine'],
-    "sinpel":['alarms', 'browsingData', 'captivePortal', 'clipboardWrite', 'contentSettings', 'contextMenus', 'declarativeContent', 'dns', 'find', 'gcm', 'idle', 'menus', 'notifications', 'offscreen', 'pkcs11', 'search', 'sidePanel', 'system.memory', 'system.storage', 'tabGroups', 'theme', 'unlimitedStorage', 'webNavigation']
+    "peligro":['bookmarks', 'nativeMessaging', 'history'],
+    "accex":['activeTab', 'browserSettings', 'clipboardRead', 'cookies', 'debugger', 'declarativeNetRequest', 'declarativeNetRequestFeedback', 'declarativeNetRequestWithHostAccess', 'desktopCapture', 'downloads', 'downloads.open', 'downloads.ui', 'geolocation', 'identity', 'management', 'pageCapture', 'privacy', 'proxy', 'scripting', 'system.display', 'tabCapture', 'tabHide', 'tabs', 'webAuthenticationProxy', 'webRequest', 'webRequestBlocking'],
+    "accmod":['contextualIdentities', 'devtools', 'enterprise.hardwarePlatform', 'fontSettings', 'power', 'printerProvider', 'sessions', 'system.cpu', 'topSites', 'tts', 'ttsEngine'],
+    "sinpel":['alarms', 'browsingData', 'captivePortal', 'clipboardWrite', 'contentSettings', 'contextMenus', 'declarativeContent', 'dns', 'find', 'gcm', 'idle', 'menus', 'notifications', 'offscreen', 'pkcs11', 'search', 'sidePanel', 'storage', 'system.memory', 'system.storage', 'tabGroups', 'theme', 'unlimitedStorage', 'webNavigation']
 }
 
 chrome.management.getAll((extensions) => {
